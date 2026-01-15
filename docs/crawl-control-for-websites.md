@@ -14,9 +14,9 @@ _Understanding disallow, noindex, and nofollow and when to use them._
 
 These directives function as mere requests, like a sign saying “Employees must wash hands.” A user agent (crawler) needs to choose to respect these rules for them to have any effect. Conventional search engine crawlers like Googlebot, Bingbot, and DuckDuckBot do respect them. This may, or may not, be sufficient if your server is being hammered by bots.
 
-## 🚫 Prevent crawling of faceted search URLs
+## 🚫 Prevent crawling of parameterized URLs
 
-Use `Disallow` in `/robots.txt` for crawl control over parameterized URLs.
+Use `Disallow` in `/robots.txt` for crawl control over parameterized URLs. This can be helpful to limit the load that legitimate crawlers generate when spidering visible search results with multiple filters and facets.
 
 Disallow Drupal pagination crawl sitewide:
 
@@ -29,6 +29,17 @@ Disallow query string crawl of q parameter:
 Disallow any query string crawl sitewide:
 
 	Disallow: /*?
+
+### Prevent some URLs and allow others
+
+To limit crawl in some cases but allow it in others, make use of specificity.
+
+Disallow any query string crawl sitewide except for product pages:
+
+	Allow: /product/*?
+	Disallow: /*?
+
+This works due to [order of precedence](https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec#order-of-precedence-for-rules) for Googlebot.
 
 ### How to test
 
@@ -57,6 +68,8 @@ Disallow any query string crawl sitewide:
 
 - [Managing crawling of faceted navigation URLs](https://developers.google.com/search/docs/crawling-indexing/crawling-managing-faceted-navigation)
 - [Robots.txt introduction and guide](https://developers.google.com/search/docs/crawling-indexing/crawling-managing-faceted-navigation)
+- [Order of precedence](https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec#order-of-precedence-for-rules)
+- [Detailed precedence discussion](https://webmasters.stackexchange.com/a/130656)
 
 ## 🙅 Discourage crawling of links on a specific URL
 
@@ -92,23 +105,23 @@ If your use case is removing a page from search results, or preventing it from e
 
 Use `rel="canonical"` in the `<link>` element to tell crawlers not to remember or index parameterized versions of the page:
 
-	<link rel="canonical" href="https://www.example.gov/search">
+	<link rel="canonical" href="https://www.example.com/search">
 
 Suppose your search engine accepts keyword queries (e.g. “bananas”), has pagination, and provides a category filter for types of food such that…
 
 1. a query for “bananas” produces a URL like: 
 
-		https://www.example.gov/search?q=bananas
+		https://www.example.com/search?q=bananas
 
 2. a query for “bananas” with the Fruit filter selected produces a URL like: 
 
-		https://www.example.gov/search?q=bananas&c=fruit
+		https://www.example.com/search?q=bananas&c=fruit
 
 3. a query for “bananas,” with Fruit filter selected, viewing the third page of results produces a URL like: 
 
-		https://www.example.gov/search?q=bananas&c=fruit&page=2
+		https://www.example.com/search?q=bananas&c=fruit&page=2
 
-Provided each variant contains `<link rel="canonical" href="https://www.example.gov/search">` in the `<head>` crawlers will know that they should only index the canonical version of the page.
+Provided each variant contains `<link rel="canonical" href="https://www.example.com/search">` in the `<head>` crawlers will know that they should only index the canonical version of the page.
 
 Parameterized versions will not be indexed.
 
@@ -130,4 +143,4 @@ A good mix of these techniques for most sites may include:
 3. If a page is appearing in results and you need to remove it, use `noindex` in the `<meta>` element on that page and allow it to be crawled.
 4. Canonicalize your pages: ensure every page outputs a `rel="canonical"` in the `<link>` element such that query-string variants will always point to the unparameterized version of the URL.
 
-This blend of signals will limit what where well-intentioned crawlers go, when they stop, and what they remember.
+This blend of signals will limit where well-intentioned crawlers go, when they stop, and what they remember.
