@@ -131,9 +131,9 @@ If your use case is preventing parameterized versions of a page from being index
 
 ### Pagination
 
-Screaming Frog [recommends](https://www.screamingfrog.co.uk/learn-seo/canonicals/#bestpractices) that parameterized pagination URLs *not be canonicalized* to the first page in the series because it may reduce the likelihood that Google will crawl and pass Pagerank to the pages in the listing.
+Screaming Frog [recommends](https://www.screamingfrog.co.uk/learn-seo/canonicals/#bestpractices) that parameterized pagination URLs for content like products or articles *not be canonicalized* to the first page in the series because it may reduce the likelihood that Google will crawl and pass Pagerank to the pages in the listing.
 
-Google also [advises against this](https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading#use-urls-correctly).
+Google also [advises using unique canonical URLs for paginated content](https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading#use-urls-correctly).
 
 This may mean that you need to decide between:
 
@@ -144,19 +144,35 @@ Ideally the pages enumerated by the paginated listing will also appear in your s
 
 However, if you are not concerned about limiting crawl to conserve hosting resources, your best option is to ensure articles are listed in sitemap.xml and also allow paginated listings to include the page numbers in the canonical element like so:
 
-	<!-- on page 1 -->
+	<!-- on page 1 of /articles -->
 	<link rel="canonical" href="https://www.example.com/articles">
 	
-	<!-- on page 2 -->
+	<!-- on page 2 of /articles -->
 	<link rel="canonical" href="https://www.example.com/articles?page=1">
 	
-	<!-- on page 3 -->
+	<!-- on page 3 of /articles -->
 	<link rel="canonical" href="https://www.example.com/articles?page=2">
 
-	<!-- on page 4, etc. -->
+	<!-- on page 4 of /articles, etc. -->
 	<link rel="canonical" href="https://www.example.com/articles?page=3">
 
-Note that if you do this, you may wish to omit the parameterized versions of the pages from sitemap.xml.
+**Note:** If the content being paginated is a set of **search results** it is better to ignore the above advice, as long as there are other ways for crawlers to access the content.
+
+	<!-- on page 1 of /search -->
+	<link rel="canonical" href="https://www.example.com/search">
+	
+	<!-- on page 2 of /search -->
+	<link rel="canonical" href="https://www.example.com/search">
+	
+	<!-- on page 3 of /search -->
+	<link rel="canonical" href="https://www.example.com/search">
+
+	<!-- on page 4 of /search, etc. -->
+	<link rel="canonical" href="https://www.example.com/search">
+
+Allowing site search results to be indexed opens the possibility of spam abuse if the search term is included in the URL. 
+
+Combine this technique with the advice on preventing a page from being indexed (above) when the URL is anything other than `/search`.
 
 ### Further reading
 
