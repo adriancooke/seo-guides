@@ -129,10 +129,40 @@ If your use case is removing parameterized versions of a page from search result
 
 If your use case is preventing parameterized versions of a page from being indexed and they are not currently appearing in results, it’s okay to block crawl and use the canonical element as a backstop.
 
+### Pagination
+
+Screaming Frog [recommends](https://www.screamingfrog.co.uk/learn-seo/canonicals/#bestpractices) that parameterized pagination URLs *not be canonicalized* to the first page in the series because it may reduce the likelihood that Google will crawl and pass Pagerank to the pages in the listing.
+
+Google also [advises against this](https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading#use-urls-correctly).
+
+This may mean that you need to decide between:
+
+1. Limiting Pagerank on the one hand, and
+2. Limiting crawl on the other.
+
+Ideally the pages enumerated by the paginated listing will also appear in your site’s sitemap.xml. If that is true, and you are concerned about limiting crawl, then you may be better off canonicalizing your paginated listings to the first page.
+
+However, if you are not concerned about limiting crawl to conserve hosting resources, your best option is to ensure articles are listed in sitemap.xml and also allow paginated listings to include the page numbers in the canonical element like so:
+
+	<!-- on page 1 -->
+	<link rel="canonical" href="https://www.example.com/articles">
+	
+	<!-- on page 2 -->
+	<link rel="canonical" href="https://www.example.com/articles?page=1">
+	
+	<!-- on page 3 -->
+	<link rel="canonical" href="https://www.example.com/articles?page=2">
+
+	<!-- on page 4, etc. -->
+	<link rel="canonical" href="https://www.example.com/articles?page=3">
+
+Note that if you do this, you may wish to omit the parameterized versions of the pages from sitemap.xml.
+
 ### Further reading
 
 - [Canonicals](https://www.screamingfrog.co.uk/learn-seo/canonicals/)
 - [How to specify a canonical with rel="canonical" and other methods](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls#best-practices)
+- [Pagination — use URLs correctly](https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading#use-urls-correctly)
 
 ## 💫 Putting it all together
 
@@ -141,6 +171,6 @@ A good mix of these techniques for most sites may include:
 1. Use **`Disallow`** with wildcards in `/robots.txt` to block URL parameters that should not ever be crawled.
 2. Use **`nofollow`** in the `<meta>` element on search pages to tell crawlers not to follow links on the page. If the search page includes results by default and those results contain content crawlers should know about, ensure that the content is included in sitemap.xml so that search engines can discover it.
 3. If a page is appearing in results and you need to remove it, use `noindex` in the `<meta>` element on that page and allow it to be crawled.
-4. Canonicalize your pages: ensure every page outputs a `rel="canonical"` in the `<link>` element such that query-string variants will always point to the unparameterized version of the URL.
+4. Canonicalize your pages: ensure every page outputs a `rel="canonical"` in the `<link>` element such that query-string variants are only allowed when they enumerate unique content and are omitted when they merely filter content.
 
 This blend of signals will limit where well-intentioned crawlers go, when they stop, and what they remember.
