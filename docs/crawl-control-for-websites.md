@@ -2,7 +2,7 @@
 
 _Understanding disallow, noindex, and nofollow and when to use them._
 
-## 📖 Definitions
+## Definitions 📖
 
 **Disallow** is set in `/robots.txt` while `noindex` and `nofollow` are set on the `<meta>` element.
 
@@ -10,11 +10,11 @@ _Understanding disallow, noindex, and nofollow and when to use them._
 - noindex  → don’t index it 🙊
 - nofollow → don’t crawl the links on it 🚫🕷️
 
-## ⚠️ Please be aware
+## Please be aware ⚠️
 
 These directives function as mere requests, like a sign saying “Employees must wash hands.” A user agent (crawler) needs to choose to respect these rules for them to have any effect. Conventional search engine crawlers like Googlebot, Bingbot, and DuckDuckBot do respect them. This may, or may not, be sufficient if your server is being hammered by bots.
 
-## 🚫 Prevent crawling of parameterized URLs
+## Prevent crawling of parameterized URLs 🚫
 
 Use `Disallow` in `/robots.txt` for crawl control over parameterized URLs. This can be helpful to limit the load that legitimate crawlers generate when spidering visible search results with multiple filters and facets.
 
@@ -71,7 +71,7 @@ This works due to [order of precedence](https://developers.google.com/crawling/d
 - [Order of precedence](https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec#order-of-precedence-for-rules)
 - [Detailed precedence discussion](https://webmasters.stackexchange.com/a/130656)
 
-## 🙅 Discourage crawling of links on a specific URL
+## Discourage crawling of links on a specific URL 🙅
 
 Use `nofollow` in the `<meta>` element to tell crawlers not to follow the links on a page:
 
@@ -86,7 +86,7 @@ If your use case is preventing search engines from crawling search page facets i
 - [Robots meta tags specifications → nofollow](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#nofollow)
 - [Nofollow attribute](https://www.screamingfrog.co.uk/learn-seo/nofollow/#whento)
 
-## 🛡️ Prevent a page from being indexed
+## Prevent a page from being indexed 🛡️
 
 Use `noindex` in the `<meta>` element to tell crawlers not to index the page or to remove it from the index if it has already been added:
 
@@ -101,7 +101,7 @@ If your use case is removing a page from search results, or preventing it from e
 - [Block search indexing with noindex](https://developers.google.com/search/docs/crawling-indexing/block-indexing)
 - [Robots meta tags specifications → noindex](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#noindex) 
 
-## 🚦 Stop URL parameters only from being indexed
+## Stop URL parameters only from being indexed 🚦
 
 Use `rel="canonical"` in the `<link>` element to tell crawlers not to remember or index parameterized versions of the page:
 
@@ -180,7 +180,7 @@ Combine this technique with the advice on preventing a page from being indexed (
 - [How to specify a canonical with rel="canonical" and other methods](https://developers.google.com/search/docs/crawling-indexing/consolidate-duplicate-urls#best-practices)
 - [Pagination — use URLs correctly](https://developers.google.com/search/docs/specialty/ecommerce/pagination-and-incremental-page-loading#use-urls-correctly)
 
-## 💫 Putting it all together
+## Putting it all together 💫
 
 A good mix of these techniques for most sites may include:
 
