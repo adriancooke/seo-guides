@@ -1,7 +1,5 @@
 # LLMs, AI, and GEO
 
-**Document status: Drafty draft.**
-
 _Can you optimize for discovery in generative engines like ChatGPT, and how?_
 
 This guide is an attempt to document emerging concepts and note sources that are making plausible (if not true) claims about how to improve visibility in LLM-powered chatbots. It’s all very speculative right now.
