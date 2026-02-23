@@ -16,7 +16,7 @@ This guide is an attempt to document emerging concepts and note sources that are
 
 ## This field is very new ⚠️
 
-The term Generative Engine Optimization (GEO) was likely [coined](https://arxiv.org/abs/2311.09735) by Aggarwal, et al. in 2023. It wasn’t until mid-2025 that Google started seeing [search volume](https://trends.google.com/trends/explore?q=%2Fg%2F11md5185sw&date=today%205-y&geo=US) for the term. This is to say the field is very new, in flux, and full of wild claims (e.g. “SEO is dead”). So it pays to retain your skepticism until clearer guidance emerges from providers that can be tested and validated in real-world scenarios.
+The term Generative Engine Optimization (GEO) was likely [coined](https://arxiv.org/abs/2311.09735) by Aggarwal, et al. in 2023. It wasn’t until mid-2025 that Google started seeing significant [search volume](https://trends.google.com/trends/explore?q=%2Fg%2F11md5185sw&date=today%205-y&geo=US) for the term. This is to say the field is very new, in flux, and full of wild claims (e.g. “SEO is dead”). So it pays to retain your skepticism until clearer guidance emerges from providers that can be tested and validated in real-world scenarios.
 
 ## Topics 📋
 
