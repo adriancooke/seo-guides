@@ -1,4 +1,4 @@
-# LLMs, AI, and GEO
+# [Draft] LLMs, AI, and GEO
 
 _Can you optimize for discovery in generative engines like ChatGPT, and how?_
 
