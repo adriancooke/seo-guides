@@ -57,7 +57,7 @@ An interesting idea but highly speculative right now as to effectiveness.
 - [SEO for Google’s AI Overview](https://www.sistrix.com/ask-sistrix/ai-basics/seo-for-googles-overview-with-ai/)
 - [AI basics: acronyms, meanings and reality](https://www.sistrix.com/ask-sistrix/ai-basics/)
 
-### Crawlers 🤖
+### Crawlers
 
 Distinguishing LLM-related crawlers generally and understanding their subtypes.
 
