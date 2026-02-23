@@ -45,17 +45,7 @@ Spoiler: it’s basically good SEO.
 - [Do AI Models Reward Structured Data? Testing Schema in GEO](https://www.seerinteractive.com/work/case-studies/do-ai-models-reward-structured-data-testing-schema-in-geo): 
 	- “Our theory [sic] was that LLMs recognize and reward structured data, especially when it highlights pricing information in a way that’s clear and intentional. By marking up specific pages with schema, we believed the content would become more trustworthy to AI models and more likely to be surfaced. As a result, we would be able to impact our client’s visibility among relevant queries in ChatGPT. 
 	- **Validation:** After analyzing current AI bot behavior on our client’s site, we found that their top pagetype included AggregateOffer schema. The pages that contained this schema received 221% more GPT-related log hits than pages without.”
-
-### SEO and llms.txt
-
-An interesting idea but highly speculative right now as to effectiveness.
-
-- [Preparing your website for the future of AI search with llms.txt](https://www.1xinternet.com/en/highlights/llms-txt-website-visibility-ai-search)
-- [The value of llms.txt: Hype or real?](https://www.mintlify.com/blog/the-value-of-llms-txt-hype-or-real)
-- [What Is llms.txt and should you use it?](https://www.semrush.com/blog/llms-txt/)
-- [Maryland’s llms txt file](https://www.maryland.gov/llms.txt)
 - [SEO for Google’s AI Overview](https://www.sistrix.com/ask-sistrix/ai-basics/seo-for-googles-overview-with-ai/)
-- [AI basics: acronyms, meanings and reality](https://www.sistrix.com/ask-sistrix/ai-basics/)
 
 ### Crawlers
 
@@ -69,4 +59,15 @@ Distinguishing LLM-related crawlers generally and understanding their subtypes.
 	- Agent crawlers
 	- RAG crawlers
 - [Overview of OpenAI Crawlers](https://developers.openai.com/api/docs/bots/) defines each of the three types for ChatGPT.
+
+### llms.txt
+
+An interesting idea but highly speculative right now as to effectiveness.
+
+- [Preparing your website for the future of AI search with llms.txt](https://www.1xinternet.com/en/highlights/llms-txt-website-visibility-ai-search)
+- [The value of llms.txt: Hype or real?](https://www.mintlify.com/blog/the-value-of-llms-txt-hype-or-real)
+- [What Is llms.txt and should you use it?](https://www.semrush.com/blog/llms-txt/)
+- [Maryland’s llms txt file](https://www.maryland.gov/llms.txt)
+- [AI basics: acronyms, meanings and reality](https://www.sistrix.com/ask-sistrix/ai-basics/)
+- [llms.txt: How useful is the file for LLM optimisation?](https://www.sistrix.com/ask-sistrix/ai-basics/llms-txt-how-useful-is-the-file-for-llm-optimisation/)
 
