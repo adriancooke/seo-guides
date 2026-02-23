@@ -9,6 +9,7 @@ To provide engineers, designers, and strategists with practical recommendations 
 ## 🏁 Topics
 
 1. [Crawl control for websites](docs/crawl-control-for-websites.md)
+2. [LLMs, AI, and GEO](docs/llms-ai-and-geo.md) — Draft ⚠️
 
 ## 🙋 Maintainers
 
