@@ -79,3 +79,9 @@ In [Do AI models reward structured data? Testing schema in GEO](https://www.seer
 Seer interpreted this to mean that ChatGPT users were seeing their client’s experimental pages more because the `ChatGPT-User` hits were a reflection of what users were seeing real-time as answers to their questions within ChatGPT.
 
 I think this is interesting though I want to know more about the assertion that the rate of hits from `ChatGPT-User` is a good (valid and reliable) proxy for users seeing the client’s content in ChatGPT.
+
+## Best practices
+
+1. Don’t rely on JavaScript to render content—it will be seen far less often
+2. Add metadata fields in your CMS to support schemas that apply to your content
+3. Add Schema.org metadata to your pages where appropriate (JSON-LD in `<head>`)
