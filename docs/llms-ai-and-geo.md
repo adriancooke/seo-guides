@@ -38,6 +38,13 @@ Spoiler: it’s basically good SEO.
 	- “Our theory [sic] was that LLMs recognize and reward structured data, especially when it highlights pricing information in a way that’s clear and intentional. By marking up specific pages with schema, we believed the content would become more trustworthy to AI models and more likely to be surfaced. As a result, we would be able to impact our client’s visibility among relevant queries in ChatGPT. 
 	- **Validation:** After analyzing current AI bot behavior on our client’s site, we found that their top pagetype included AggregateOffer schema. The pages that contained this schema received 221% more GPT-related log hits than pages without.”
 - [SEO for Google’s AI Overview](https://www.sistrix.com/ask-sistrix/ai-basics/seo-for-googles-overview-with-ai/)
+- [What is Google AI Mode? (+ how to optimize for it in 2026)](https://www.semrush.com/blog/google-ai-mode/)
+	- “Google AI Mode is built to understand natural, conversational queries similar to how people talk to voice assistants like ChatGPT or Google Assistant”
+	- “Use question-based headings. Start with phrases like ‘How does…,’ ‘What is…,’ ‘Why does…,’ or ‘Can you…’ These match how users phrase queries.”
+	- “Build out FAQ sections. Address common follow-up questions using a structured Q&A format. Add FAQ schema markup when possible.”
+- [FAQ (FAQPage, Question, Answer) structured data](https://developers.google.com/search/docs/appearance/structured-data/faqpage)
+	- Note that this is a new Schema.org type
+	- Google says “FAQ rich results are only available for well-known, authoritative websites that are government-focused or health-focused.”
 
 ### Crawlers
 
@@ -93,7 +100,7 @@ I think this is interesting though I want to know more about the assertion that 
  3. Publish structured, semantic HTML content and avoid PDF, DOCX, TXT, etc.
  4. Avoid pages with thin content (< 200 words)
  5. Use headings for page structure (h2, h3, etc.) with appropriate nesting
- 6. Use plain language where possible and terms of art as supplementary
+ 6. Use plain, conversational language where possible
  7. Ensure all content has a unique title and meta description
  8. Don’t rely on JavaScript to render content—it will be seen far less often
  9. Don’t hide content (e.g. using accordions or tabs)—it will be seen far less often
