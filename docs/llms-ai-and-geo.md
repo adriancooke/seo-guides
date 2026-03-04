@@ -24,13 +24,11 @@ The short answer is that LLM answers in traditional search engines, and LLM tool
 
 *	[Google users are less likely to click on links when an AI summary appears in the results](https://www.pewresearch.org/short-reads/2025/07/22/google-users-are-less-likely-to-click-on-links-when-an-ai-summary-appears-in-the-results/) — Pew Research Center (July 22, 2025)
 
-## Topics 📋
+## What do we know about LLMs and SEO?
 
-My plan is to expand these topics but for now I am using the lists to keep track of the most initially useful and informative articles and documentation. I might remove some of these as I read them more closely and will definitely add others.
+### General principles
 
-### Generative Engine Optimization
-
-Spoiler: it’s basically good SEO.
+Spoiler: Good SEO is basically good GEO.
 
 - [Generative Engine Optimization: The new era of search](https://www.semrush.com/blog/generative-engine-optimization/): 
 	- “[Microsoft’s official guidelines (PDF)](https://about.ads.microsoft.com/content/dam/sites/msa-about/global/common/content-lib/pdf/from-discovery-to-influence-a-guide-to-aeo-and-geo.pdf) for generative search reinforce this: make your catalogs machine-readable, structure content to answer real questions, and establish authority through credible sources and expertise signals. These are the same principles that drive traditional SEO success.”
