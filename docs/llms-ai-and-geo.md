@@ -106,5 +106,5 @@ I think this is interesting though I want to know more about the assertion that 
  8. Don’t rely on JavaScript to render content—it will be seen far less often
  9. Don’t hide content (e.g. using accordions or tabs)—it will be seen far less often
 10. Add sufficient metadata fields to your CMS to support applicable schemas
-11. Add applicable Schema.org metadata to your pages (as JSON-LD in `<head>`)
-12. Don’t block crawl (see [Crawl control for websites](crawl-control-for-websites.md))
+11. Add applicable [Schema.org metadata](structured-data-markup.md) to your pages (as JSON-LD in `<head>`)
+12. Don’t [block crawl](crawl-control-for-websites.md)
