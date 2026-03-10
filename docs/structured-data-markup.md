@@ -12,7 +12,7 @@ This guide is aimed at helping engineers and information architects identify way
 | Schema.org | A controlled vocabulary published by Google, Microsoft, Yahoo, and Yandex to provide search engines with greater context for understanding the properties of and relationships between content on a website. |
 | JSON-LD | A standard syntax for representing data properties and links using JavaScript Object Notation. |
 
-## What is structured data?
+## Introduction to structured data 🏗️
 
 _Content marked up with machine-readable annotations that describe its properties and relationships to other content, according to a standard or convention._
 
