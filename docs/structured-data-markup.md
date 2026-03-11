@@ -14,6 +14,10 @@ This guide is aimed at helping engineers and information architects identify way
 
 ## Introduction to structured data 🏗️
 
+When working with structured data we sometimes use terms interchangeably, which can cause confusion. This section covers some relevant distinctions.
+
+### What is structured data?
+
 _Content marked up with machine-readable annotations that describe its properties and relationships to other content, according to a standard or convention._
 
 (details to follow)
@@ -46,7 +50,14 @@ _A standard syntax for representing data properties and links using JavaScript O
 
 1. [Schema Markup Generator (JSON-LD)](https://technicalseo.com/tools/schema-markup-generator/) — GUI for creating a small number of popular objects
 2. [Schema Markup Validator](https://validator.schema.org/) — structured data testing tool
-3. [JSON-LD Playground](https://json-ld.org/playground/) — Viewer for exploring JSON-LD objects
+3. [Rich Results Tester](https://search.google.com/test/rich-results) — Google results testing tool
+4. [JSON-LD Playground](https://json-ld.org/playground/) — viewer for exploring JSON-LD objects
+5. [Schema Visualizer](https://schema-visualizer.yoast.com/) — schema validator and graph viewer
+
+## Search engine guidance 🔍
+
+* [Structured data markup that Google Search supports](https://developers.google.com/search/docs/appearance/structured-data/search-gallery)
+* [Marking up your site with structured data (Bing)](https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731)
 
 ## Further reading 📚
 
