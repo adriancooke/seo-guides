@@ -18,15 +18,30 @@ When working with structured data we sometimes use terms interchangeably, which 
 
 ### What is structured data?
 
-_Content marked up with machine-readable annotations that describe its properties and relationships to other content, according to a standard or convention._
+In the context of web content “structured data” refers to methods of marking up (“tagging”) content with machine-readable annotations that describe it in terms of some shared standard or convention.
 
-(details to follow)
+An early example of adding structure to web content was the [Microformats](https://en.wikipedia.org/wiki/Microformat) effort of the mid-2000s. Microformats was a HTML-compatible method for adding semantics to content that would map to RFC standards such as [vCard](https://en.wikipedia.org/wiki/VCard) and [iCalendar](https://en.wikipedia.org/wiki/ICalendar). This made it possible for users to more easily add contact information or events discovered on the web to contacts and calendaring software.
+
+For example, a controlled set of class names could be added to elements that contain contact information:
+
+```html
+<ul class="vcard">
+  <li class="fn">Joe Doe</li>
+  <li class="org">The Example Company</li>
+  <li class="tel">604-555-1234</li>
+  <li><a class="url" href="http://example.com/">http://example.com/</a></li>
+</ul>
+```
+
+This [hCard](https://developer.mozilla.org/en-US/docs/Web/HTML/Guides/Microformats#h-card) Microformat could be detected and converted to a downloadable vCard by browser extensions such as [Operator](https://en.wikipedia.org/wiki/Operator_(extension)) for Firefox. 
+
+In 2011 Schema.org was [formed](https://en.wikipedia.org/wiki/Schema.org) by Google, Bing, and Yahoo. It expanded on efforts like Microformats and began the process of building out a vocabulary of types that can be used for annotating a range of content found on websites.
 
 ### What is Schema.org?
 
-_A controlled vocabulary published by Google, Microsoft, Yahoo, and Yandex to provide search engines with greater context for understanding the properties of and relationships between content on a website._
+[Schema.org](https://schema.org/) is an industry [partnership](https://en.wikipedia.org/wiki/Schema.org) created by Google, Microsoft, Yahoo, and Yandex to provide a systematic method for publishers to mark up their content with machine-readable data that provides more context for the nature of content on a website. It is not a standard in the W3C sense.
 
-The schemas published by Schema.org describe “things”—content objects or entities—such as a [news article](https://schema.org/NewsArticle), [breadcrumb trail](https://schema.org/BreadcrumbList), or [government organization](https://schema.org/GovernmentOrganization). Each object is part of a [hierarchical taxonomy](https://schema.org/docs/full.html) and has its own properties, with more specific objects inheriting properties from their “parent” objects while introducing properties of their own.
+The schemas published by Schema.org can be used to tell search engines what type of “thing” a piece of content is, such as a [news article](https://schema.org/NewsArticle), [breadcrumb trail](https://schema.org/BreadcrumbList), or [government organization](https://schema.org/GovernmentOrganization). Each object (or entity) is part of a [hierarchical taxonomy](https://schema.org/docs/full.html) and has its own properties (e.g. name, URL, unique identifier), with more specific types inheriting properties from their “parents” while introducing properties of their own.
 
 As well as having their own properties, schema objects can also be related to one another using URLs (e.g. a `NewsArticle` published by a `GovernmentOrganization`). Such data linkages, if specified correctly, can form a limited knowledge graph that search engines ([and presumably LLMs](llms-ai-and-geo.md)) can understand.
 
@@ -34,7 +49,7 @@ Schema.org is not a full ontology, in the sense of [OWL](https://www.w3.org/TR/o
 
 ### What is JSON-LD?
 
-_A standard syntax for representing data properties and links using JavaScript Object Notation._
+JSON-LD is a standard syntax for representing data properties and creating links between them using JavaScript Object Notation (JSON). The LD refers to “Linked Data.”
 
 (details to follow)
 
