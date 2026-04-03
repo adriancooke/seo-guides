@@ -8,7 +8,7 @@ _Understanding disallow, noindex, and nofollow and when to use them._
 
 - Disallow → don’t look at it 🙈
 - noindex  → don’t index it 🙊
-- nofollow → don’t crawl the links on it 🚫🕷️
+- nofollow → don’t crawl the external links on it 🚫🕷️
 
 ## Please be aware ⚠️
 
@@ -71,15 +71,19 @@ This works due to [order of precedence](https://developers.google.com/crawling/d
 - [Order of precedence](https://developers.google.com/crawling/docs/robots-txt/robots-txt-spec#order-of-precedence-for-rules)
 - [Detailed precedence discussion](https://webmasters.stackexchange.com/a/130656)
 
-## Discourage crawling of links on a specific URL 🙅
+## Discourage crawling external links on a specific URL 🙅
 
 Use `nofollow` in the `<meta>` element to tell crawlers not to follow the links on a page:
 
 	<meta name="robots" content="nofollow">
 
-This tells crawlers they can read the page but should not crawl any of the links on it.
+This tells crawlers they can read the page but should not crawl any of the external links on it. This functions as a hint (rather than a directive) that you do not vouch for those outbound links.
 
-If your use case is preventing search engines from crawling search page facets it is recommended to implement prevention of crawling faceted search URLs as well. The `nofollow` attribute is considered a *hint* rather than a *directive*, so combining it with a disallow in robots.txt sends a stronger signal discouraging crawl.
+This value can also be implemented as an attribute on specific links:
+
+	<a href="https://www.example.com/" rel="nofollow">some external site</a>
+
+⚠️ **Note:** If your use case is preventing search engines from crawling search page facets use `Disallow` rules in `/robots.txt` to prevent crawl of faceted URLs. The `nofollow` option applied to internal content does not achieve the same result as `Disallow`. Google advises that the `nofollow` attribute is for [discouraging crawl of external links](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links#nofollow).
 
 ### Further reading
 
@@ -94,12 +98,13 @@ Use `noindex` in the `<meta>` element to tell crawlers not to index the page or 
 
 This tells crawlers they can read the page but should not allow it to be indexed and served in search results.
 
-If your use case is removing a page from search results, or preventing it from ever being included, publish the page with this metadata value and allow the page to be crawled (i.e. don’t use `nofollow` and don’t block in `/robots.txt`). If you don’t allow crawl, bots will not know that they should remove the page from the index.
+⚠️ **Note:** If your use case is removing a page from search results, or preventing it from ever being included, publish the page with this metadata value and allow the page to be crawled (i.e. don’t use `nofollow` and don’t block in `/robots.txt`). If you don’t allow crawl, bots will not know that they should remove the page from the index.
 
 ### Further reading
 
 - [Block search indexing with noindex](https://developers.google.com/search/docs/crawling-indexing/block-indexing)
 - [Robots meta tags specifications → noindex](https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag#noindex) 
+- [Qualify your outbound links to Google](https://developers.google.com/search/docs/crawling-indexing/qualify-outbound-links#nofollow)
 
 ## Use canonicals to manage duplicate content 🚦
 
@@ -158,7 +163,7 @@ In short:
 1. Self-canonicalize search result pages regardless of their query strings, e.g.
 	
 		<!-- on /search?query=bananas&category=fruit&page=2 -->
-		<link rel="canonical" href="https://www.example.com/search?query=bananas&category=fruit&page=2">`
+		<link rel="canonical" href="https://www.example.com/search?query=bananas&category=fruit&page=2">
 
 2. Use `noindex` on search result pages to prevent them from appearing in external search engines, e.g. 
 		
@@ -180,8 +185,8 @@ In short:
 A good mix of these techniques for most sites may include:
 
 1. Use **`Disallow`** with wildcards in `/robots.txt` to block URL parameters that should not ever be crawled.
-2. Use **`nofollow`** in the `<meta>` element on search pages to tell crawlers not to follow links on the page. If the search page includes results by default and those results contain content crawlers should know about, ensure that the content is included in sitemap.xml so that search engines can discover it.
-3. If a page is appearing in results and you need to remove it, use `noindex` in the `<meta>` element on that page and allow it to be crawled.
-4. Canonicalize your pages: ensure every page outputs a `rel="canonical"` in the `<link>` element such that query-string variants are only allowed when they enumerate unique content and are omitted when they merely filter content.
+2. Use **`nofollow`** in the `<meta>` element on pages to tell crawlers not to follow external links on the page.
+3. If a page is appearing in results and you need to remove it, use `noindex` in the `<meta>` element on that page and *allow it to be crawled*.
+4. Canonicalize your pages: ensure every page outputs a `rel="canonical"` in the `<link>` including query strings that change the content displayed. Omit query strings that don’t change the content displayed.
 
 This blend of signals will limit where well-intentioned crawlers go, when they stop, and what they remember.
