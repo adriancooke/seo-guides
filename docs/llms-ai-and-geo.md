@@ -6,8 +6,8 @@ This guide is an attempt to document emerging concepts and note sources that are
 
 ## Definitions 📖
 
-| Term | Definition|
-| ---- | --------- |
+| Term | Definition |
+| ---- | ---------- |
 | Large Language Model (LLM) | A predictive engine trained using machine learning on a very large body of text data. |
 | Artificial Intelligence (AI) | Marketing term for LLM software that turns user prompts into answers in text, code, or media. |
 | Generative engine | Chatbots such as ChatGPT (OpenAI), Gemini (Google), and Copilot (Microsoft). |
@@ -52,13 +52,41 @@ Distinguishing LLM-related crawlers generally and understanding their subtypes.
 - [Crawler list for AI user-agents (Dec 2025)](https://www.searchenginejournal.com/ai-crawler-user-agents-list/558130/)
 - [List of AI/LLM user-agents](https://robotstxt.com/ai)
 - [LLM-generated traffic in Adobe CJA](https://experienceleaguecommunities.adobe.com/adobe-analytics-3/tracking-and-analyzing-llm-and-ai-generated-traffic-in-adobe-customer-journey-analytics-12780) where it’s important to distinguish between:
+	- RAG crawlers
 	- Training crawlers
 	- Agent crawlers
-	- RAG crawlers
-- [Overview of OpenAI Crawlers](https://developers.openai.com/api/docs/bots/) defines each of the three types for ChatGPT.
-	- GPTBot → Training crawler
-	- ChatGPT-User → Agent crawler
-	- OAI-SearchBot → RAG crawler
+
+#### Bot typology
+
+| Type | Provider | User-Agent name |
+| ---- | -------- | --------------- |
+| Web/RAG | Anthropic | Claude-SearchBot |
+| Web/RAG | Google | Google-Extended |
+| Web/RAG | Microsoft | Bingbot |
+| Web/RAG | OpenAI | OAI-SearchBot |
+| Web/RAG | Perplexity | PerplexityBot |
+| Training | Anthropic | ClaudeBot |
+| Training | Google | Google-Extended |
+| Training | Microsoft | Bingbot |
+| Training | OpenAI | GPTBot |
+| Training | Perplexity | (unknown) |
+| Agent | Anthropic | Claude-User |
+| Agent | Google | Google |
+| Agent | Microsoft | (unknown) |
+| Agent | OpenAI | ChatGPT-User |
+| Agent | Perplexity | Perplexity‑User |
+
+Sources:
+
+- Anthropic: [Does Anthropic crawl data from the web, and how can site owners block the crawler?](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler)
+- Google: [List of Google's common crawlers](https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers)
+- Microsoft: [Overview of Bing crawlers (user agents)](https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0)
+- OpenAI: [Overview of OpenAI Crawlers](https://developers.openai.com/api/docs/bots/)
+- Perplexity: [Perplexity Crawlers](https://docs.perplexity.ai/docs/resources/perplexity-crawlers)
+- Aggregated resources:
+    - [Complete Crawler List For AI User-Agents [Dec 2025]](https://www.searchenginejournal.com/ai-crawler-user-agents-list/558130/)
+    - [AI / LLM User-Agents: Blocking Guide](https://robotstxt.com/ai)
+    - [LLM-generated traffic in Adobe CJA](https://experienceleaguecommunities.adobe.com/adobe-analytics-3/tracking-and-analyzing-llm-and-ai-generated-traffic-in-adobe-customer-journey-analytics-12780)
 
 ### llms.txt
 
