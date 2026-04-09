@@ -83,10 +83,6 @@ Sources:
 - Microsoft: [Overview of Bing crawlers (user agents)](https://www.bing.com/webmasters/help/which-crawlers-does-bing-use-8c184ec0)
 - OpenAI: [Overview of OpenAI Crawlers](https://developers.openai.com/api/docs/bots/)
 - Perplexity: [Perplexity Crawlers](https://docs.perplexity.ai/docs/resources/perplexity-crawlers)
-- Aggregated resources:
-    - [Complete Crawler List For AI User-Agents [Dec 2025]](https://www.searchenginejournal.com/ai-crawler-user-agents-list/558130/)
-    - [AI / LLM User-Agents: Blocking Guide](https://robotstxt.com/ai)
-    - [LLM-generated traffic in Adobe CJA](https://experienceleaguecommunities.adobe.com/adobe-analytics-3/tracking-and-analyzing-llm-and-ai-generated-traffic-in-adobe-customer-journey-analytics-12780)
 
 ### llms.txt
 
